@@ -1,4 +1,9 @@
+var creds = require('./credentials.js');
+
 exports.config = {
+    
+    user: creds.user,
+    key: creds.key,
     
     specs: [
         './test/specs/**/*.js'
@@ -10,8 +15,9 @@ exports.config = {
     maxInstances: 10,
 
     capabilities: [{
+        maxInstances: 5,
+        //
         browserName: 'firefox'
-        // browserName: 'chrome'
     }],
 
     sync: true,
@@ -25,7 +31,7 @@ exports.config = {
     connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
 
-    services: ['selenium-standalone'],
+    services: ['sauce'],
     framework: 'mocha',
     reporters: ['spec'],
     mochaOpts: {

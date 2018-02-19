@@ -6,7 +6,7 @@ module.exports = {
     
     mkdir: function(dirPath) {
         // make directory, ignoring "already exists" errors
-        // used for screenshot folders
+        // used for screenshot folders bc they aren't created automatically
         try {
             fs.mkdirSync(dirPath);
         } catch (err) {
@@ -17,7 +17,6 @@ module.exports = {
     folder: function() {
         var folder = "";
         // os/platform and browser/browsername.
-        // separate because folders for screenshots have to be made separately
         if (browser.desiredCapabilities.os) {
             folder = browser.desiredCapabilities.os;
         } else if (browser.desiredCapabilities.platform) {
