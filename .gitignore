@@ -1,0 +1,10 @@
+#
+# WDIO-examples
+#
+
+node_modules/
+*-screenshots/
+errorShots/
+setup/*.png
+credentials.js
+local.log

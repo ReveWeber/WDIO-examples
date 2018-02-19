@@ -1,0 +1,21 @@
+{
+  "name": "wdio-examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "webdriverio": "^4.9.11"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "wdio-browserstack-service": "^0.1.14",
+    "wdio-mocha-framework": "^0.5.12",
+    "wdio-selenium-standalone-service": "0.0.9",
+    "wdio-spec-reporter": "^0.1.3"
+  }
+}
