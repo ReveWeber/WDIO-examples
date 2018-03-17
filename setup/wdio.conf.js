@@ -1,8 +1,10 @@
 exports.config = {
-    // after setting up your stack for local testing you should take your main wdio.conf.js file and change the "specs" and "capabilities" arrays to match these (rather than running this file directly, since it won't test your entire setup that way)
+    // after setting up your stack for local testing you should take your main wdio.conf.js file
+    // and change the "specs" and "capabilities" arrays to match these
+    // (rather than running this file directly, since it won't test your entire setup that way)
 
     specs: [
-        // this path is relative to 
+        // this path is relative to where you've installed WDIO
         './setup/test.js'
     ],
     maxinstances: 10,
