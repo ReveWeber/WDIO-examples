@@ -1,19 +1,19 @@
-// This test attempts to reach the About page of rweber.net starting from the Blog page.
+// This test attempts to reach the About page of ReveDreams.com starting from the Blog page.
 
 // It uses the Page Object Model to separate test logic from page interaction logic.
 // See all-in-one-extended.js for some explanatory comments about the non-POM aspects.
 
 const IDs = require('../helpers/identifiers.js');
-const Blog = require('../pages/rw-blog.js');
-const Search = require('../pages/rw-about-search.js');
-const About = require('../pages/rw-about.js');
+const Blog = require('../pages/rd-blog.js');
+const Search = require('../pages/rd-about-search.js');
+const About = require('../pages/rd-about.js');
 
 
-IDs.mkdir('./pom-rw-screenshots');
-IDs.mkdir('./pom-rw-screenshots/' + IDs.folder());
-var imgPrefix = './pom-rw-screenshots/' + IDs.folder() + '/' + IDs.identifier() + '-';
+IDs.mkdir('./pom-rd-screenshots');
+IDs.mkdir('./pom-rd-screenshots/' + IDs.folder());
+var imgPrefix = './pom-rd-screenshots/' + IDs.folder() + '/' + IDs.identifier() + '-';
 
-// from here down this is identical to pom-rd.js
+// from here down this is identical to pom-rw.js
 
 describe('Finding About from Blog via Search', function() {
 

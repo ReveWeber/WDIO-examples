@@ -2,6 +2,8 @@ exports.config = {
     
     specs: [
         './test/specs/**/*.js'
+        // './test/specs/pom-rd.js',
+        // './test/specs/pom-rw.js'
     ],
     exclude: [
         // 'path/to/excluded/files'
@@ -29,7 +31,8 @@ exports.config = {
     framework: 'mocha',
     reporters: ['spec'],
     mochaOpts: {
-        ui: 'bdd'
+        ui: 'bdd',
+        timeout: 20000,
     },
 
     before: function (capabilities, specs) {
