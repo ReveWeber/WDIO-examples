@@ -1,16 +1,16 @@
 // This test attempts to reach the About page of rweber.net starting from the Blog page.
 
-// It uses "Page Modules" to separate test logic from page interaction logic.
+// It uses "WDIO-idiomatic" Page Objects to separate test logic from page interaction logic.
 
 const IDs = require('../helpers/identifiers.js');
-const Blog = require('../pages-pmm/rw-blog.js');
-const Search = require('../pages-pmm/rw-about-search.js');
-const About = require('../pages-pmm/rw-about.js');
+const Blog = require('../pages-2/rw-blog.js');
+const Search = require('../pages-2/rw-about-search.js');
+const About = require('../pages-2/rw-about.js');
 
 
-IDs.mkdir('./pmm-rw-screenshots');
-IDs.mkdir('./pmm-rw-screenshots/' + IDs.folder());
-var imgPrefix = './pmm-rw-screenshots/' + IDs.folder() + '/' + IDs.identifier() + '-';
+IDs.mkdir('./wdio-rw-screenshots');
+IDs.mkdir('./wdio-rw-screenshots/' + IDs.folder());
+var imgPrefix = './wdio-rw-screenshots/' + IDs.folder() + '/' + IDs.identifier() + '-';
 
 // from here down this is identical to pom-rw.js
 

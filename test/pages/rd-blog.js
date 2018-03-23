@@ -2,12 +2,15 @@
 
 var Page = require('./rd-page.js');
 
-var BlogPage = Object.create(Page, {
-    title: { value: function() { return "ReveDreams.com - teaching, design, and exploration"; }},
-    open: {value: function() {
+module.exports = {
+    title: function() { return "ReveDreams.com - teaching, design, and exploration"; },
+    open: function() {
         browser.url('http://www.revedreams.com/');
-    }},
-});
+    },
+};
 
+// add any contents of Page that haven't been explicitly overwritten
 
-module.exports = BlogPage;
+for (var prop in Page) { 
+    (module.exports[prop] = module.exports[prop]) || (module.exports[prop] = Page[prop]);
+}

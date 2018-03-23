@@ -2,12 +2,15 @@
 
 var InteriorPage = require('./rw-interior-page.js');
 
-var BlogPage = Object.create(InteriorPage, {
-    title: { value: function() { return "Blog - rweber.net"; }},
-    open: {value: function() {
+module.exports = {
+    title: function() { return "Blog - rweber.net"; },
+    open: function() {
         browser.url('http://www.rweber.net/blog/');
-    }},
-});
+    },
+};
 
+// add any contents of InteriorPage that haven't been explicitly overwritten
 
-module.exports = BlogPage;
+for (var prop in InteriorPage) { 
+    (module.exports[prop] = module.exports[prop]) || (module.exports[prop] = InteriorPage[prop]);
+}

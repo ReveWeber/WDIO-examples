@@ -2,11 +2,14 @@
 
 var Page = require('./rd-page.js');
 
-var AboutPage = Object.create(Page, {
-    url: { value: function() { return "http://www.revedreams.com/about/"; }},
-    title: { value: function() { return "About & Contact - ReveDreams.com"; }},
-    pageName: { value: function() { return "About & Contact"; }},
-});
+module.exports = {
+    url: function() { return "http://www.revedreams.com/about/"; },
+    title: function() { return "About & Contact - ReveDreams.com"; },
+    pageName: function() { return "About & Contact"; },
+};
 
+// add any contents of Page that haven't been explicitly overwritten
 
-module.exports = AboutPage;
+for (var prop in Page) { 
+    (module.exports[prop] = module.exports[prop]) || (module.exports[prop] = Page[prop]);
+}
