@@ -1,6 +1,6 @@
 // Page objects done per WDIO documentation
 
-// "About" search results page object on rweber.net
+// Search results page object on rweber.net
 
 var InteriorPage = require('./rw-interior-page.js');
 

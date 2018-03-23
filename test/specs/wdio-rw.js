@@ -4,7 +4,7 @@
 
 const IDs = require('../helpers/identifiers.js');
 const Blog = require('../pages-2/rw-blog.js');
-const Search = require('../pages-2/rw-about-search.js');
+const Search = require('../pages-2/rw-search.js');
 const About = require('../pages-2/rw-about.js');
 
 

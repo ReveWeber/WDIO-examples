@@ -1,4 +1,4 @@
-// "About" search results page object on ReveDreams.com
+// Search results page object on ReveDreams.com
 
 var Page = require('./rd-page.js');
 
