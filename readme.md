@@ -10,4 +10,6 @@ Sample config files and tests for using WebdriverIO with Mocha and Chai, either 
 * `pom-rd.js` and `pom-rw.js` use the Page Object Model with the pages in `pages`.
 * `wdio-rw.js` uses the Page Object Model with the pages in `pages-2`.
 
-For more information, see [Getting set up with WebdriverIO](http://www.rweber.net/developer-toolbox/getting-set-webdriverio/) and more generally [the code testing tag on my blog](http://www.rweber.net/tag/code-testing/).
+`/XPath/` contains example pages for an XPath tutorial; see its readme for more.
+
+For more information, see [Getting set up with WebdriverIO](https://www.rweber.net/developer-toolbox/getting-set-webdriverio/) and more generally [the code testing tag on my blog](https://www.rweber.net/tag/code-testing/).

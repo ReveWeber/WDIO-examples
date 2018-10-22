@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cart Summary Table | Sample HTML for XPath examples</title>
+</head>
+<body>
+
+<h1>Cart Summary Table</h1>
+
+<table id="cart-listing">
+    <tr>
+        <th></th>
+        <th>SKU</th>
+        <th>Item Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
+    <tr>
+        <td class="notes"></td>
+        <td>1234</td>
+        <td>Glasses wallpaper</td>
+        <td>$12.00</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td class="notes">Only 1 in stock!</td>
+        <td>3624</td>
+        <td>Glossy bear sticker</td>
+        <td>$6.00</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td class="notes"></td>
+        <td>9745</td>
+        <td>Banana tattoos</td>
+        <td>$8.00</td>
+        <td>1</td>
+    </tr>
+</table>
+
+<hr>
+
+<p>Goal: Check that item 3624 displays a low-inventory note.</p>
+
+<p>XPath expressions to try in the console (not all work!):</p>
+
+<ul style="font-family: sans-serif;line-height:1.75;">
+<li>$x('//td[contains(., "3624")]/ancestor::tr//td[@class="notes"]')</li>
+<li>$x('//td[contains(., "3624")]/ancestor::tr[1]//td[@class="notes"]')</li>
+<li>$x('//tr[contains(., "3624")]//td[@class="notes"]')</li>
+<li>$x('//tr[contains(.//td, "3624")]//td[@class="notes"]')</li>
+<li>$x('//tr[contains(//td, "3624")]//td[@class="notes"]')</li>
+<li>$x('//tr[contains(.//td[2], "3624")]//td[@class="notes"]')</li>
+<li>$x('//td[@class="notes" and contains(.., "3624")]')</li>
+<li>$x('//td[@class="notes" and contains(..//td[2], "3624")]')</li>
+</ul>
+
+<p>See <a href="https://www.rweber.net/developer-toolbox/deep-dive-into-narrow-slice-of-xpath">Finding Cousins with XPath</a> for explanations.</p>
+
+</body>
+</html>

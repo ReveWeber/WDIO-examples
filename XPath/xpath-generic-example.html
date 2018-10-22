@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cart Summary "Table" | Sample HTML for XPath examples</title>
+<style type="text/css">
+#cart-listing > div {
+display: table-row;
+}
+#cart-listing div div {
+display: table-cell;
+padding: 2px 0.25em;
+}
+#cart-listing > div:first-child div {
+font-weight: 700;
+}
+</style>
+</head>
+<body>
+
+<h1>Cart Summary Table, generic markup</h1>
+
+<div id="cart-listing">
+    <div>
+        <div></div>
+        <div>SKU</div>
+        <div>Item Name</div>
+        <div>Price</div>
+        <div>Quantity</div>
+    </div>
+    <div>
+        <div class="notes"></div>
+        <div>1234</div>
+        <div>Glasses wallpaper</div>
+        <div>$12.00</div>
+        <div>2</div>
+    </div>
+    <div>
+        <div class="notes">Only 1 in stock!</div>
+        <div>3624</div>
+        <div>Glossy bear sticker</div>
+        <div>$6.00</div>
+        <div>1</div>
+    </div>
+    <div>
+        <div class="notes"></div>
+        <div>9745</div>
+        <div>Banana tattoos</div>
+        <div>$8.00</div>
+        <div>1</div>
+    </div>
+</div>
+
+<hr>
+
+<p>Goal: Check that item 3624 displays a low-inventory note.</p>
+
+<p>XPath expressions to try in the console (not all work!):</p>
+
+<ul style="font-family: sans-serif;line-height:1.75;">
+<li>$x('//div[contains(., "3624")]/ancestor::div//div[@class="notes"]')</li>
+<li>$x('//div[contains(., "3624")]/ancestor::div[1]//div[@class="notes"]')</li>
+<li>$x('//div//div//div[contains(., "3624")]/ancestor::div//div[@class="notes"]')</li>
+<li>$x('//div//div//div[contains(., "3624")]/ancestor::div[1]//div[@class="notes"]')</li>
+<li>$x('//div[contains(., "3624")]//div[@class="notes"]')</li>
+<li>$x('//div[contains(.//div[2], "3624")]//div[@class="notes"]')</li>
+<li>$x('//div//div[contains(., "3624")]//div[@class="notes"]')</li>
+<li>$x('//div[@class="notes" and contains(.., "3624")]')</li>
+<li>$x('//div[@class="notes" and contains(..//div[2], "3624")]')</li>
+</ul>
+
+<p>See <a href="https://www.rweber.net/developer-toolbox/deep-dive-into-narrow-slice-of-xpath">Finding Cousins with XPath</a> for explanations.</p>
+
+</body>
+</html>

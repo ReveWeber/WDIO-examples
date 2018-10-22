@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Additional Order Info | Sample HTML for XPath examples</title>
+
+<style>
+div {
+max-width: 400px;
+border: 1px solid #ccc;
+padding: 1em;
+}
+.edit-order-option {
+float: right;
+margin-top: -2.5em;
+}
+</style>
+</head>
+<body>
+
+<h1>Additional Order Info</h1>
+
+<div>
+<h3>Gift Options</h3>
+
+<p><a href="where-gift-options-are-set.html" class="edit-order-option">Edit</a></p>
+
+<p>Gift order, message: <span id="gift-message">I hope you love these as much as I do!</span></p>
+</div>
+
+<div>
+<h3>Shipping Method</h3>
+
+<p><a href="where-shipping-method-is-set.html" class="edit-order-option">Edit</a></p>
+
+<p>Shipping via <span id="order-ship-carrier">USPS Priority Mail</span> to arrive in <span id="order-ship-speed">2 days</span>.</p>
+
+<p><a href="location-of-shipping-info.html">More about shipping options</a></p>
+</div>
+
+<hr>
+
+<p>Goal: Locate the gift option edit link for clicking, without leaning on href value.</p>
+
+<p>XPath expressions to try in the console:</p>
+
+<ul style="font-family: sans-serif;line-height:1.75;">
+<li>$x('//span[@id="gift-message"]/ancestor::div//a[@class="edit-order-option"]')</li>
+<li>$x('//span[@id="gift-message"]/ancestor::div[1]//a[@class="edit-order-option"]')</li>
+<li>$x('//span[@id="gift-message"]/../..//a[@class="edit-order-option"]')</li>
+<li>$x('//div[.//span[@id="gift-message"]]//a[@class="edit-order-option"]')</li>
+<li>$x('//div[./p/span[@id="gift-message"]]//a[@class="edit-order-option"]')</li>
+<li>$x('//a[@class="edit-order-option" and ./ancestor::div//span[@id="gift-message"]]')</li>
+<li>$x('//a[@class="edit-order-option" and ../..//span[@id="gift-message"]]')</li>
+<li>$x('//a[@class="edit-order-option" and ./ancestor::div/p/span[@id="gift-message"]]')</li>
+</ul>
+
+<p>See <a href="https://www.rweber.net/developer-toolbox/deep-dive-into-narrow-slice-of-xpath">Finding Cousins with XPath</a> for explanations.</p>
+
+</body>
+</html>
